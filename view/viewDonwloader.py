@@ -122,5 +122,5 @@ class viewDonwloader(QMainWindow):
         central_widget = QWidget()
         central_widget.setLayout(layoutMain)
         self.setCentralWidget(central_widget)
-#
+        #
 
