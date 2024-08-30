@@ -1,7 +1,7 @@
 import sys
 from PySide6.QtWidgets import QApplication
 
-from Controller.viewController import viewController
+from controller.viewController import viewController
 from view.viewDonwloader import viewDonwloader
 
 if __name__ == "__main__":
