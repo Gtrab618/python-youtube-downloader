@@ -52,7 +52,7 @@ class viewDonwloader(QMainWindow):
         QLineEdit {
             border: 2px solid gray;
             padding: 3px 5px;
-            selection-background-color: white;
+            selection-background-color: gray;
         }
         """
 
@@ -84,10 +84,14 @@ class viewDonwloader(QMainWindow):
         labelTarget = QLabel("Guardar en:")
         self.labelTargetSelected = QLabel("Ruta no seleccionada")
 
+        # laber title download
+        self.labelTitleDownload = QLabel("")
+        self.labelTitleDownload.setStyleSheet("color: green;")
         #cmbFormats.addItems(["option1", "option2", "option3"])
         #style
         labelUrl.setStyleSheet(labelStyle)
         self.inputUrl.setStyleSheet(inputStyle)
+
 
         #btn abrir explorador################
         self.btnWindonws = QPushButton("Abrir ruta descargas")
@@ -139,7 +143,8 @@ class viewDonwloader(QMainWindow):
         #layout3
         layoutTarget = QHBoxLayout()
         layoutTarget.addWidget(labelTarget,1)
-        layoutTarget.addWidget(self.labelTargetSelected,8)
+        layoutTarget.addWidget(self.labelTargetSelected,7)
+        layoutTarget.addWidget(self.labelTitleDownload, 1)
         layoutTarget.addWidget(self.btnRuta, 1)
 
         #layout 4################3

@@ -57,7 +57,7 @@ class viewController(QObject):
         self.view.btnBuscar.setEnabled(True)
         self.view.gif_labelSearch.setVisible(False)
         #normalmente error bad response 400
-
+        print(error_message)
         match error_message:
           case r"regex_search: could not find match for (?:v=|\/)([0-9A-Za-z_-]{11}).*":
 
@@ -83,6 +83,7 @@ class viewController(QObject):
     def on_download_clicked(self):
         itemStream=self.view.cmbFormats.currentText()
         if itemStream:
+            self.view.labelTitleDownload.setText("")
             if self.directory:
                 self.view.gif_labelDown.setVisible(True)
                 self.view.btnDescargar.setEnabled(False)
@@ -110,6 +111,7 @@ class viewController(QObject):
         self.view.btnDescargar.setEnabled(True)
         self.view.gif_labelDown.setVisible(False)
         self.view.gif_labelConv.setVisible(False)
+        self.view.labelTitleDownload.setText(confirm_message)
 
 
 

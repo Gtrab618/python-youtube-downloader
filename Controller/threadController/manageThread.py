@@ -31,7 +31,7 @@ class downloadThread(QThread):
                 #sound
                 start_playing_saved()
 
-                self.finished.emit(f"Video descargado en {self.location}")
+                self.finished.emit(f"Video descargado: {stream.title}")
             else:
                 stream = self.yt.streams.get_by_itag(18)
                 video_path = stream.download(output_path=self.location)
@@ -49,7 +49,7 @@ class downloadThread(QThread):
 
                 start_playing_saved()
 
-                self.finished.emit(f"Musica descargada {self.location}")
+                self.finished.emit(f"Musica descargada {stream.title}")
 
         except Exception as e:
             start_playing_error()
